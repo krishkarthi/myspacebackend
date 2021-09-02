@@ -17,5 +17,6 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "node", "dist/main" ]
+# Start
+CMD [ "node", "dist/main"]
+EXPOSE 3000
