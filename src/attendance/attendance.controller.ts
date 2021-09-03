@@ -22,9 +22,9 @@ export class AttendanceController {
     }
 
     @Get()
-    @Render('index')
+    @Render('attendance')
     async root() {
-        console.log(await this.attendanceService.getAttendanceAll({}));
+        // console.log(await this.attendanceService.getAttendanceAll({}));
         return { Attendance: await this.attendanceService.getAttendanceAll({}),
         headers : ["User Name", "Email ID", "Client Name", "Working Today", "Session", "Reason for Not Working", "Attendance Declaration", "Date", "Time"] };
     }

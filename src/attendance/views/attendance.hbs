@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>My Encora</title>
+</head>
+
+<body>
+    {{!-- <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Bootstrap
+        </a>
+    </nav>
+    <table style="border: 1px solid red; width:100%">
+        <thead>
+            <tr>
+                {{#each headers}}
+                    <th>{{this}}</th>
+                {{/each}}
+            </tr>
+        </thead>
+        <tbody style="border: 1px solid red;">
+           <tr>
+               {{#Attendance}}
+                <td>{{user_name}}</td>
+                <td>{{user_email}}</td>
+                <td>{{client_name}}</td>
+                <td>{{working_today}}</td>
+                <td>{{session}}</td>
+                <td>{{reason_not_working}}</td>
+                <td>{{attendance_declaration}}</td>
+                <td>{{date}}</td>
+                <td>{{time}}</td>
+               {{/Attendance}}
+           </tr> 
+        </tbody>
+    </table>
+</body> --}}
+
+<nav class="navbar navbar-inverse bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">
+    <img src="/public/logo.svg" />
+  </a>
+  <button class="btn btn-warning navbar-btn">Download as Excel</button>
+</nav>
+
+<div style="margin-top:100px; padding: 10px;">
+  <table class="table table-hover table-bordered">
+    <thead class="table-dark">
+      <tr style="text-align: center; font-size:11px;">
+        {{#each headers}}
+            <th>{{this}}</th>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#Attendance}}
+      <tr  style="font-size:11px;">
+          <td>{{loud user_name}}</td>
+          <td>{{user_email}}</td>
+          <td>{{client_name}}</td>
+          <td>{{working_today}}</td>
+          <td>{{session}}</td>
+          <td>{{reason_not_working}}</td>
+          <td>{{attendance_declaration}}</td>
+          <td>{{date}}</td>
+          <td>{{time}}</td>
+      </tr>
+      {{/Attendance}}
+    </tbody>
+  </table>
+</div>
+
+</html>
