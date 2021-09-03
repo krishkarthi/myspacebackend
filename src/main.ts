@@ -47,7 +47,7 @@ async function bootstrap() {
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'src/attendance/views'));
   app.setViewEngine('hbs');
-    
+  app.enableCors();
   await app.listen(8080);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
