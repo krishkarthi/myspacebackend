@@ -11,11 +11,11 @@ import { Attendance } from './attendance/attendance.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      host: 'b6kk9yobls0goyy-mongodb.services.clever-cloud.com',
+      host: '172.30.84.86',
       port: 27017,
-      database: 'b6kk9yobls0goyy',
-      username: 'urpvvfm5x3o7g3wlrghc',
-      password: '0FPEhL5IsOWTOjtN0VFo',
+      database: 'encora',
+      username: 'myencora',
+      password: 'myencora123',
       entities: [Photo, Users, Attendance],
       synchronize: true,
       useUnifiedTopology:true
