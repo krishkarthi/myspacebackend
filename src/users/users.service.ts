@@ -18,13 +18,13 @@ export class UsersService {
         return this.usersModel.save(options);
     }
     async updateUserDetails(options:Users) {
-        var user = await this.usersModel.findOne({ email: options.email });
-        if(user.email == options.email){
-            console.log("updateUserDetails===>", true)
-            return await this.usersModel.update({ email: options.email }, options);
-        }else{
-            console.log("updateUserDetails===>", false)
-            return await this.usersModel.save(options);
-        }
+        // var user = await this.usersModel.findOne({ email: options.email });
+        // if(user.email == options.email){
+        //     console.log("updateUserDetails===>", true)
+            return await this.usersModel.update(options.id, options);
+        // }else{
+        //     console.log("updateUserDetails===>", false)
+        //     return await this.usersModel.save(options);
+        // }
     }
 }
