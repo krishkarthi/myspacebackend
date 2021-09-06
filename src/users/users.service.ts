@@ -19,12 +19,10 @@ export class UsersService {
     }
     async updateUserDetails(options:Users) {
         var user = await this.usersModel.findOne({ email: options.email });
-        console.log("updateUserDetails==>>>");
-        console.log(user);
-        if(user == undefined){
-            return await this.usersModel.save(options);
-        }else{
+        if(user.email == options.email){
             return await this.usersModel.update({ email: options.email }, options);
+        }else{
+            return await this.usersModel.save(options);
         }
     }
 }

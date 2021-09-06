@@ -46,8 +46,11 @@ export class UsersController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('validateUser')
-    async validateUser(){
-        return {validateUser: true};
+    @Post('validateUser')
+    async validateUser(@Body() users){
+        return {
+            validateUser: true,
+            user: this.usersService.findOne({email: users.email})
+        };
     }
 }
