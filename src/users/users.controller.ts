@@ -50,7 +50,7 @@ export class UsersController {
     async validateUser(@Body() users){
         return {
             validateUser: true,
-            user: this.usersService.findOne({email: users.email})
+            user: await this.usersService.findOne({email: users.email})
         };
     }
 }
