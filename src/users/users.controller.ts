@@ -44,4 +44,10 @@ export class UsersController {
             }
         });
     }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('validateUser')
+    async validateUser(){
+        return {validateUser: true};
+    }
 }

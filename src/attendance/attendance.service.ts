@@ -12,7 +12,7 @@ export class AttendanceService {
       ) {}
 
     async updateAttendance(options){
-        const query = { user_email: options.user_email, date: options.date };
+        const query = { email: options.email, date: options.date };
         const update = { $set: options};
         // return this.attendanceModel.updateOne(query, update, {upsert: true})
         var user = await this.attendanceModel.findOne(options);

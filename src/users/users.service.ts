@@ -11,20 +11,19 @@ export class UsersService {
       ) {}
 
     async findOne(options){
-        return this.usersModel.findOne(options);
+        return this.usersModel.find(options);
     }
 
     async saveUserDetails(options){
         return this.usersModel.save(options);
     }
-    async updateUserDetails(options){
+    async updateUserDetails(options:Users) {
         var user = await this.usersModel.findOne(options);
         console.log(user);
         if(!user){
-            user = await this.usersModel.save(options);
+            return await this.usersModel.save(options);
         }else{
-            return { "error" : "you have already registed." };
+            return await this.usersModel.update({ email: options.email }, options);
         }
-        return user;
     }
 }

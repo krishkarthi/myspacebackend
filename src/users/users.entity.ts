@@ -46,4 +46,7 @@ export class Users{
 
     @Column('string', {default: null})
     fcm_token: string;
+
+    @Column('string', {default: null})
+    azure_token: string;
 }

@@ -10,10 +10,10 @@ export class Attendance{
     id: ObjectID;
 
     @Column()
-    user_name: string;
+    name: string;
 
     @Column()
-    user_email: string;
+    email: string;
 
     @Column()
     client_name: string;
