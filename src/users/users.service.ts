@@ -21,10 +21,15 @@ export class UsersService {
         // var user = await this.usersModel.findOne({ email: options.email });
         // if(user.email == options.email){
         //     console.log("updateUserDetails===>", true)
-            return await this.usersModel.update(options.id, options);
+            // return await this.usersModel.update(options.id, options);
         // }else{
         //     console.log("updateUserDetails===>", false)
         //     return await this.usersModel.save(options);
         // }
+
+        let user = await this.usersModel.findOne(options.id);
+        console.log("updateUserDetails", user);
+        user.profile = options.profile;
+        return this.usersModel.save(user);
     }
 }
