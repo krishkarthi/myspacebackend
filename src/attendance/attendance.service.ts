@@ -15,12 +15,12 @@ export class AttendanceService {
         const query = { email: options.email, date: options.date };
         const update = { $set: options};
         // return this.attendanceModel.updateOne(query, update, {upsert: true})
-        var user = await this.attendanceModel.findOne(options);
+        var user = await this.attendanceModel.findOne(query);
         console.log(user);
         if(!user){
             user = await this.attendanceModel.save(options);
         }else{
-            return { "error" : "you are already submitted." };
+            return { "error" : "you are already submitted the attendance today." };
         }
         return user;
     }
