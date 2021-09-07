@@ -20,9 +20,9 @@ export class AttendanceService {
         if(!user){
             user = await this.attendanceModel.save(options);
         }else{
-            return { "error" : "you are already submitted the attendance today." };
+            return { "message" : "You are already submitted the attendance today." };
         }
-        return user;
+        return { "message" : "You have successfullysubmitted you attendance. " };
     }
 
     async getAttendanceAll(options){
