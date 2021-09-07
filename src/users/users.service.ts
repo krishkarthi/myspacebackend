@@ -18,18 +18,9 @@ export class UsersService {
         return this.usersModel.save(options);
     }
     async updateUserDetails(options:Users) {
-        // var user = await this.usersModel.findOne({ email: options.email });
-        // if(user.email == options.email){
-        //     console.log("updateUserDetails===>", true)
-            // return await this.usersModel.update(options.id, options);
-        // }else{
-        //     console.log("updateUserDetails===>", false)
-        //     return await this.usersModel.save(options);
-        // }
-
         let user = await this.usersModel.findOne(options.id);
         console.log("updateUserDetails", user);
-        user.profile = options.profile;
+        user = options;
         return this.usersModel.save(user);
     }
 }
