@@ -19,8 +19,17 @@ export class UsersService {
     }
     async updateUserDetails(options:Users) {
         let user = await this.usersModel.findOne(options.id);
+        user.name = options.name;
+        user.email = options.email;
+        user.mobile = options.mobile;
+        user.profile = options.profile;
+        user.specialist = options.specialist;
+        user.dob = options.dob;
+        user.qualification = options.qualification;
+        user.degree = options.degree;
+        user.fcm_token = options.fcm_token;
+        user.azure_token = options.azure_token;
         console.log("updateUserDetails", user);
-        user = options;
         return this.usersModel.save(user);
     }
 }
