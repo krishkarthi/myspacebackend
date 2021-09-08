@@ -29,6 +29,7 @@
     "@nestjs/typeorm": "8.0.2",
     "bootstrap": "^5.0.0-beta3",
     "docker": "^1.0.0",
+    "exceljs": "^4.3.0",
     "express-handlebars": "^5.3.3",
     "fastify-static": "^4.2.3",
     "file-saver": "^2.0.5",

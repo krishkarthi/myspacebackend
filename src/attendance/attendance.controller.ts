@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards, Request, HttpException, HttpStatus, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards, Request, HttpException, HttpStatus, Render, Response } from '@nestjs/common';
 import { Attendance } from './attendance.entity';
 import { AttendanceService } from './attendance.service';
 import { JwtAuthGuard } from '../users/jwt-auth.guard';
@@ -29,6 +29,12 @@ export class AttendanceController {
         console.log(await this.attendanceService.getAttendanceAll({}));
         return { Attendance: await this.attendanceService.getAttendanceAll({}),
         headers : ["User Name", "Email ID", "Client Name", "Working Today", "Session", "Reason for Not Working", "Attendance Declaration", "Date", "Time"] };
+    }
+
+    @Get('api/users/downloadAttendance')
+    async downloadAttendance(@Response() res) {
+        
+        return this.attendanceService.downloadAttendance(res);
     }
 }
 
